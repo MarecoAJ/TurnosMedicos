@@ -1,13 +1,23 @@
+
 public class Doctor {
-    int id;
+
+    static int id = 0;
     String nombreCompleto;
     String especialidad;
-    
-    Doctor(){}
-    
-    Doctor(String name){}
-    
-    public void verNombre(){
+
+    Doctor() {
+        id++;
+    }
+
+    Doctor(String name) {
+        id++;
+    }
+
+    public void verNombre() {
         System.out.println("Nombre: " + nombreCompleto);
     }
+    
+    public void verId() {
+        System.out.println("Id doctor: " + id);
+    } 
 }
