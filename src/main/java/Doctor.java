@@ -1,10 +1,10 @@
 
 public class Doctor {
 
-    static int id = 0;
-    String nombreCompleto;
-    String especialidad;
-    String email;
+    private static int id = 0;
+    private String nombreCompleto;
+    private String especialidad;
+    private String email;
 
     Doctor() {}
 

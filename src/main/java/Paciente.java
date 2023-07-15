@@ -1,12 +1,12 @@
 public class Paciente {
-    String nombreCompleto;
-    String email;
-    String direccion;
-    String telefono;
-    String fechaNacimiento;
-    double altura;
-    double talla;
-    String tipoSangineo;
+    private String nombreCompleto;
+    private String email;
+    private String direccion;
+    private String telefono;
+    private String fechaNacimiento;
+    private double altura;
+    private double talla;
+    private String tipoSangineo;
 
     public Paciente() {
     }
