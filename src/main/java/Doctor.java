@@ -4,6 +4,7 @@ public class Doctor {
     static int id = 0;
     String nombreCompleto;
     String especialidad;
+    String email;
 
     Doctor() {}
 
