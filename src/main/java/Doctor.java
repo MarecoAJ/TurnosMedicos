@@ -5,12 +5,12 @@ public class Doctor {
     String nombreCompleto;
     String especialidad;
 
-    Doctor() {
-        id++;
-    }
+    Doctor() {}
 
-    Doctor(String name) {
+    Doctor(String nombreCompleto, String especialidad) {
         id++;
+        this.nombreCompleto = nombreCompleto;
+        this.especialidad = especialidad;
     }
 
     public void verNombre() {
