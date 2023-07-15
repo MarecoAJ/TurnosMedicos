@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 public class UIMenu {
 
+    public static final String[] MESES = {"enero", "febrero", "marzo",
+    "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+    "octubre", "noviembre", "diciembre"
+    };
+    
     public static void verMenu() {
         System.out.println("bienvenido a tu turnos");
         System.out.println("Selecciona la opción deseada");
@@ -21,6 +26,9 @@ public class UIMenu {
             switch (response) {
                 case 1:
                     System.out.println("Doctor");
+                    for (int i = 0; i < 3; i++) {
+                        System.out.println(i + "." + MESES[i]);
+                    }
                     break;
                 case 2:
                     response = 0;
