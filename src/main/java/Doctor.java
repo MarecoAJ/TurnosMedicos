@@ -2,12 +2,9 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor {
+public class Doctor extends User {
 
-    private static int id = 0;
-    private String nombreCompleto;
     private String especialidad;
-    private String email;
 
     ArrayList<turnosDisponibles> turnosDisponibles = new ArrayList<>();
 
@@ -51,21 +48,8 @@ public class Doctor {
 
     }
 
-    Doctor() {
-    }
-
-    Doctor(String nombreCompleto, String especialidad) {
-        id++;
-        this.nombreCompleto = nombreCompleto;
-        this.especialidad = especialidad;
-    }
-
-    public String getNombreCompleto() {
-        return this.nombreCompleto;
-    }
-
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    Doctor(String nombreCompleto, String mail) {
+        super(nombreCompleto, mail);
     }
 
     public String getEspecialidad() {
@@ -74,14 +58,6 @@ public class Doctor {
 
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public void crearTurnoDisponible(Date fecha, String hora) {
