@@ -46,6 +46,11 @@ public class Doctor extends User {
             this.id = id;
         }
 
+        @Override
+        public String toString() {
+            return "Turnos Disponibles: \nFechas: " + this.fecha 
+                    + "\nHora: " + this.hora;
+        }
     }
 
     Doctor(String nombreCompleto, String mail) {
@@ -68,5 +73,11 @@ public class Doctor extends User {
     public ArrayList<turnosDisponibles> getTurnosDisponibles() {
 
         return turnosDisponibles;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nEspecialidad: " + this.especialidad
+                + "\nDisponible: " + turnosDisponibles.toString();
     }
 }

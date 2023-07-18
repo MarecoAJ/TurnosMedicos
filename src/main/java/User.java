@@ -48,4 +48,9 @@ public class User {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Nombre: " + this.nombreCompleto + ", Email:" + this.mail
+            + "\nDireccion: " + this.direccion + ". Tel: " + this.telefono;
+    }
 }

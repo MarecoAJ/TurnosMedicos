@@ -41,5 +41,10 @@ public class Paciente extends User {
     public void setTipoSangineo(String tipoSangineo) {
         this.tipoSangineo = tipoSangineo;
     }
-    
+   
+    @Override
+    public String toString(){
+        return super.toString() + "\nEdad: " + "\nAltura: " + getAltura()
+            + "\nTalla: " + getTalla() + "\nTipo sangre: " + this.tipoSangineo;
+    } 
 }
