@@ -1,3 +1,4 @@
+package modelos;
 
 public class Paciente extends User {
     
