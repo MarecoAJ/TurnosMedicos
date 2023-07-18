@@ -1,6 +1,6 @@
 package modelos;
 
-public class User {
+public abstract class User {
 
     private int id;
     private String nombreCompleto;
@@ -54,4 +54,6 @@ public class User {
         return "Nombre: " + this.nombreCompleto + ", Email:" + this.mail
             + "\nDireccion: " + this.direccion + ". Tel: " + this.telefono;
     }
+    
+    public abstract void verDatosUsuario();
 }

@@ -15,5 +15,11 @@ public class Enfermero extends User{
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
+
+    @Override
+    public void verDatosUsuario() {
+        System.out.println("Hosp.: samic");
+        System.out.println("Depto.: pediatria");
+    }
        
 }

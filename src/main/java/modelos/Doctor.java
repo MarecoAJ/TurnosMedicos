@@ -9,6 +9,12 @@ public class Doctor extends User {
 
     ArrayList<turnosDisponibles> turnosDisponibles = new ArrayList<>();
 
+    @Override
+    public void verDatosUsuario() {
+        System.out.println("Hosp.: samic");
+        System.out.println("Depto.: pediatria");
+    }
+
     public static class turnosDisponibles {
 
         private int id;

@@ -48,4 +48,10 @@ public class Paciente extends User {
         return super.toString() + "\nEdad: " + "\nAltura: " + getAltura()
             + "\nTalla: " + getTalla() + "\nTipo sangre: " + this.tipoSangineo;
     } 
+
+    @Override
+    public void verDatosUsuario() {
+        System.out.println("paciente");
+        System.out.println("historial del paciente");
+    }
 }
