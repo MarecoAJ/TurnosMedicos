@@ -60,7 +60,7 @@ public class Doctor extends User {
         }
     }
 
-    Doctor(String nombreCompleto, String mail) {
+    public Doctor(String nombreCompleto, String mail) {
         super(nombreCompleto, mail);
     }
 

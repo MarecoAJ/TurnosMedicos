@@ -1,15 +1,19 @@
 package ui;
 
-
+import java.util.ArrayList;
 import java.util.Scanner;
+import modelos.Doctor;
+import modelos.Paciente;
 
 public class UIMenu {
 
     public static final String[] MESES = {"enero", "febrero", "marzo",
-    "abril", "mayo", "junio", "julio", "agosto", "septiembre",
-    "octubre", "noviembre", "diciembre"
+        "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+        "octubre", "noviembre", "diciembre"
     };
-    
+    public static Doctor docLogeado;
+    public static Paciente pacLogeado;
+
     public static void verMenu() {
         System.out.println("bienvenido a tu turnos");
         System.out.println("Selecciona la opción deseada");
@@ -26,13 +30,15 @@ public class UIMenu {
             switch (response) {
                 case 1:
                     System.out.println("Doctor");
+                    response = 0;
+                    autentificarUsuario(1);
                     for (int i = 0; i < 3; i++) {
                         System.out.println(i + "." + MESES[i]);
                     }
                     break;
                 case 2:
                     response = 0;
-                    verPacienteMenu();
+                    autentificarUsuario(2);
 
                     break;
                 case 0:
@@ -42,6 +48,49 @@ public class UIMenu {
                     System.out.println("selecione una opcion");
             }
         } while (response != 0);
+    }
+
+    private static void autentificarUsuario(int tipoUsuario) {
+
+        ArrayList<Doctor> doctores = new ArrayList<>();
+        doctores.add(new Doctor("alejo", "alejo@mail.com"));
+        doctores.add(new Doctor("karen", "karen@mail.com"));
+        doctores.add(new Doctor("julio", "julio@mail.com"));
+
+        ArrayList<Paciente> pacientes = new ArrayList<>();
+        pacientes.add(new Paciente("alejo", "alejo@mail.com"));
+        pacientes.add(new Paciente("karen", "karen@mail.com"));
+        pacientes.add(new Paciente("julio", "julio@mail.com"));
+
+        boolean emailCorrecto = false;
+
+        do {
+
+            System.out.println("inserte su email: ");
+            Scanner sc = new Scanner(System.in);
+            String email = sc.nextLine();
+
+            if (tipoUsuario == 1) {
+
+                for (Doctor doc : doctores) {
+
+                    if (doc.getMail().equals(email)) {
+                        emailCorrecto = true;
+                        docLogeado = doc;
+                    }
+                }
+            }
+            if (tipoUsuario == 2) {
+
+                for (Paciente pac : pacientes) {
+
+                    if (pac.getMail().equals(email)) {
+                        emailCorrecto = true;
+                        pacLogeado = pac;
+                    }
+                }
+            }
+        } while (!emailCorrecto);
     }
 
     static void verPacienteMenu() {
