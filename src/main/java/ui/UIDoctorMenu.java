@@ -14,16 +14,17 @@ public class UIDoctorMenu {
         do {
             System.out.println("\n\n");
             System.out.println("Doctor");
-            System.out.println("Bienvenido " + UIMenu.docLogeado.getNombreCompleto());
-            System.out.println("1. agregar turnos");
-            System.out.println("2. turnos agendados");
-            System.out.println("0. salir");
+            System.out.println("Bienvenido " + UIMenu.docLogeado.getNombreCompleto() + ": ");
+            System.out.println("1. Agregar turnos");
+            System.out.println("2. Turnos agendados");
+            System.out.println("0. Salir");
             
             Scanner sc = new Scanner(System.in);
             respuesta = Integer.valueOf(sc.nextLine());
             
             switch (respuesta) {
                 case 1:
+                    verMenuTurnosAgendados();
                     break;
                 case 2:
                     break;
@@ -39,38 +40,37 @@ public class UIDoctorMenu {
         int respuesta = 0;
         do {
             System.out.println();
-            System.out.println("::agregar turnos disponibles");
-            System.out.println(":: selecciona un mes");
+            System.out.println("::Agregar turnos disponibles");
+            System.out.println(":: Selecciona un mes: ");
             
             for (int i = 0; i < 3; i++) {
                 
                 int j = i + 1;
                 System.out.println(j + ". " + UIMenu.MESES[i]);
             }
-            System.out.println("0. volver");
+            System.out.println("0. Volver");
             Scanner sc = new Scanner(System.in);
             respuesta = Integer.valueOf(sc.nextLine());
             
             if (respuesta > 0 && respuesta < 4) {
                 
                 int mesSeleccionado = respuesta;
-                System.out.println(mesSeleccionado + " . " + UIMenu.MESES[mesSeleccionado]);
-                System.out.println("inserta fecha disponible: ");
+                System.out.println(mesSeleccionado + ". " + UIMenu.MESES[mesSeleccionado -1]);
+                System.out.println("Inserta fecha disponible: dd/mm/aaaa");
                 String fecha = sc.nextLine();
-                System.out.println("tu fecha es: " + fecha
-                        + "\n1. si \n2. no");
+                System.out.println("La fecha es " + fecha + "?: " 
+                        + "\n1. SI \n2. NO");
                 int confirmacionFecha = Integer.valueOf(sc.nextLine());
-                if (confirmacionFecha == 2) {
-                    continue;
-                }
+                if (confirmacionFecha == 2) continue;
                 
                 int confimacionHora = 0;
                 String hora = "";
                 do {
-                    System.out.println("inserta hora disponible: ");
+                    System.out.println("Inserta hora disponible: 23:59 ");
                     hora = sc.nextLine();
-                    System.out.println("tu hora es: " + fecha
-                            + "\n1. si \n2. no");
+                    System.out.println("La hora es " + hora + "?"
+                            + "\n1. SI \n2. NO");
+                    confimacionHora = Integer.valueOf(sc.nextLine());
                 } while (confimacionHora == 2);
                 
                 UIMenu.docLogeado.crearTurnoDisponible(fecha, hora);

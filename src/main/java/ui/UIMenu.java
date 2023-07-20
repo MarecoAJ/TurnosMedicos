@@ -15,8 +15,8 @@ public class UIMenu {
     public static Paciente pacLogeado;
 
     public static void verMenu() {
-        System.out.println("bienvenido a tu turnos");
-        System.out.println("Selecciona la opción deseada");
+        System.out.println("Bienvenido");
+        System.out.println("Selecciona la opción deseada: ");
 
         int response = 0;
         do {
@@ -32,9 +32,6 @@ public class UIMenu {
                     System.out.println("Doctor");
                     response = 0;
                     autentificarUsuario(1);
-                    for (int i = 0; i < 3; i++) {
-                        System.out.println(i + "." + MESES[i]);
-                    }
                     break;
                 case 2:
                     response = 0;
@@ -42,10 +39,10 @@ public class UIMenu {
 
                     break;
                 case 0:
-                    System.out.println("gracias");
+                    System.out.println("Gracias");
                     break;
                 default:
-                    System.out.println("selecione una opcion");
+                    System.out.println("Selecione una opcion: ");
             }
         } while (response != 0);
     }
@@ -77,6 +74,7 @@ public class UIMenu {
                     if (doc.getMail().equals(email)) {
                         emailCorrecto = true;
                         docLogeado = doc;
+                        UIDoctorMenu.verMenuDoctor();
                     }
                 }
             }
