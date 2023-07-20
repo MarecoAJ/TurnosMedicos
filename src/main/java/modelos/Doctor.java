@@ -1,7 +1,11 @@
 package modelos;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Doctor extends User {
 
@@ -20,17 +24,26 @@ public class Doctor extends User {
         private int id;
         private Date fecha;
         private String hora;
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 
         public turnosDisponibles() {
         }
 
-        public turnosDisponibles(Date fecha, String hora) {
-            this.fecha = fecha;
+        public turnosDisponibles(String fecha, String hora) {
+            try {
+                this.fecha = formato.parse(fecha);
+            } catch (ParseException ex) {
+                ex.printStackTrace();
+            }
             this.hora = hora;
         }
 
         public Date getFecha() {
             return this.fecha;
+        }
+
+        public String getFecha(String fecha) {
+            return formato.format(this.fecha);
         }
 
         public void setFecha(Date fecha) {
@@ -55,7 +68,7 @@ public class Doctor extends User {
 
         @Override
         public String toString() {
-            return "Turnos Disponibles: \nFechas: " + this.fecha 
+            return "Turnos Disponibles: \nFechas: " + this.fecha
                     + "\nHora: " + this.hora;
         }
     }
@@ -72,7 +85,7 @@ public class Doctor extends User {
         this.especialidad = especialidad;
     }
 
-    public void crearTurnoDisponible(Date fecha, String hora) {
+    public void crearTurnoDisponible(String fecha, String hora) {
 
         turnosDisponibles.add(new turnosDisponibles(fecha, hora));
     }
