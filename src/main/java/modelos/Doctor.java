@@ -4,8 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Doctor extends User {
 
@@ -38,11 +36,11 @@ public class Doctor extends User {
             this.hora = hora;
         }
 
-        public Date getFecha() {
+        public Date getFecha(String fecha) {
             return this.fecha;
         }
 
-        public String getFecha(String fecha) {
+        public String getFecha() {
             return formato.format(this.fecha);
         }
 

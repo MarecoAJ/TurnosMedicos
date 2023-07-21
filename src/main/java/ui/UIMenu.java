@@ -30,13 +30,12 @@ public class UIMenu {
             switch (response) {
                 case 1:
                     System.out.println("Doctor");
-                    response = 0;
                     autentificarUsuario(1);
+                    response = 0;
                     break;
                 case 2:
-                    response = 0;
                     autentificarUsuario(2);
-
+                    response = 0;
                     break;
                 case 0:
                     System.out.println("Gracias");
@@ -55,9 +54,9 @@ public class UIMenu {
         doctores.add(new Doctor("julio", "julio@mail.com"));
 
         ArrayList<Paciente> pacientes = new ArrayList<>();
-        pacientes.add(new Paciente("alejo", "alejo@mail.com"));
-        pacientes.add(new Paciente("karen", "karen@mail.com"));
-        pacientes.add(new Paciente("julio", "julio@mail.com"));
+        pacientes.add(new Paciente("alejo", "alejo2@mail.com"));
+        pacientes.add(new Paciente("karen", "karen2@mail.com"));
+        pacientes.add(new Paciente("julio", "julio2@mail.com"));
 
         boolean emailCorrecto = false;
 
@@ -85,6 +84,7 @@ public class UIMenu {
                     if (pac.getMail().equals(email)) {
                         emailCorrecto = true;
                         pacLogeado = pac;
+                        UIPacienteMenu.verMenuPaciente();
                     }
                 }
             }

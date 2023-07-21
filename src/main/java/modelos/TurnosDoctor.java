@@ -9,6 +9,11 @@ public class TurnosDoctor implements IAgendarTurnos{
     private Date fecha;
     private String hora;
 
+    public TurnosDoctor(Paciente paciente, Doctor doctor) {
+        this.paciente = paciente;
+        this.doctor = doctor;
+    }
+
     public Paciente getPaciente() {
         return paciente;
     }
@@ -43,7 +48,8 @@ public class TurnosDoctor implements IAgendarTurnos{
 
     @Override
     public void agendar(Date fecha, String hora) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.fecha = fecha;
+        this.hora = hora;
     }
     
 }
