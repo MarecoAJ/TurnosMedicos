@@ -15,10 +15,12 @@ public class UIMenu {
     public static Paciente pacLogeado;
 
     public static void verMenu() {
+        
         System.out.println("Bienvenido");
         System.out.println("Selecciona la opción deseada: ");
 
         int response = 0;
+        
         do {
             System.out.println("1. Doctor");
             System.out.println("2. Paciente");
@@ -43,6 +45,7 @@ public class UIMenu {
                 default:
                     System.out.println("Selecione una opcion: ");
             }
+            
         } while (response != 0);
     }
 
@@ -67,9 +70,8 @@ public class UIMenu {
             String email = sc.nextLine();
 
             if (tipoUsuario == 1) {
-
+                
                 for (Doctor doc : doctores) {
-
                     if (doc.getMail().equals(email)) {
                         emailCorrecto = true;
                         docLogeado = doc;
@@ -77,10 +79,10 @@ public class UIMenu {
                     }
                 }
             }
+            
             if (tipoUsuario == 2) {
 
                 for (Paciente pac : pacientes) {
-
                     if (pac.getMail().equals(email)) {
                         emailCorrecto = true;
                         pacLogeado = pac;
@@ -88,11 +90,14 @@ public class UIMenu {
                     }
                 }
             }
+            
         } while (!emailCorrecto);
     }
 
     static void verPacienteMenu() {
+        
         int response = 0;
+        
         do {
             System.out.println("\n\n");
             System.out.println("paciente");
@@ -114,6 +119,7 @@ public class UIMenu {
                     verMenu();
                     break;
             }
+            
         } while (response != 0);
     }
 }

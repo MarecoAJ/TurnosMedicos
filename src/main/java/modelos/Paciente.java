@@ -9,10 +9,9 @@ public class Paciente extends User {
     private double altura;
     private double talla;
     private String tipoSangineo;
-
     private ArrayList<TurnosDoctor> turnosDoctores = new ArrayList<>();
     private ArrayList<TurnosEnfermero> turnosEnfermero = new ArrayList<>();
-    
+
     public Paciente(String nombreCopleto, String mail) {
         super(nombreCopleto, mail);
     }
@@ -65,10 +64,10 @@ public class Paciente extends User {
         return this.turnosDoctores;
     }
 
-    public void agregarTurnosDoctores(Doctor doctor, Date fecha, String hora ) {
-       TurnosDoctor turnosDoctor = new TurnosDoctor(this, doctor);
-       turnosDoctor.agendar(fecha, hora);
-       turnosDoctores.add(turnosDoctor);
+    public void agregarTurnosDoctores(Doctor doctor, Date fecha, String hora) {
+        TurnosDoctor turnosDoctor = new TurnosDoctor(this, doctor);
+        turnosDoctor.agendar(fecha, hora);
+        turnosDoctores.add(turnosDoctor);
     }
 
     public ArrayList<TurnosEnfermero> getTurnosEnfermero() {

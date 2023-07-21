@@ -3,6 +3,7 @@ package modelos;
 import java.util.Date;
 
 public class TurnosDoctor implements IAgendarTurnos{
+    
     private int id;
     private Paciente paciente;
     private Doctor doctor;
@@ -50,6 +51,5 @@ public class TurnosDoctor implements IAgendarTurnos{
     public void agendar(Date fecha, String hora) {
         this.fecha = fecha;
         this.hora = hora;
-    }
-    
+    } 
 }

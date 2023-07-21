@@ -8,7 +8,6 @@ import java.util.Date;
 public class Doctor extends User {
 
     private String especialidad;
-
     ArrayList<turnosDisponibles> turnosDisponibles = new ArrayList<>();
 
     @Override
@@ -24,15 +23,16 @@ public class Doctor extends User {
         private String hora;
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 
-        public turnosDisponibles() {
-        }
+        public turnosDisponibles() {}
 
         public turnosDisponibles(String fecha, String hora) {
+            
             try {
                 this.fecha = formato.parse(fecha);
             } catch (ParseException ex) {
                 ex.printStackTrace();
             }
+            
             this.hora = hora;
         }
 

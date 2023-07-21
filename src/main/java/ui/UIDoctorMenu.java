@@ -11,6 +11,7 @@ public class UIDoctorMenu {
     public static void verMenuDoctor() {
         
         int respuesta = 0;
+        
         do {
             System.out.println("\n\n");
             System.out.println("Doctor");
@@ -32,22 +33,24 @@ public class UIDoctorMenu {
                     UIMenu.verMenu();
                     break;
             }
+            
         } while (respuesta != 0);
     }
     
     private static void verMenuTurnosAgendados() {
         
         int respuesta = 0;
+        
         do {
             System.out.println();
             System.out.println("::Agregar turnos disponibles");
             System.out.println(":: Selecciona un mes: ");
             
             for (int i = 0; i < 3; i++) {
-                
                 int j = i + 1;
                 System.out.println(j + ". " + UIMenu.MESES[i]);
             }
+            
             System.out.println("0. Volver");
             Scanner sc = new Scanner(System.in);
             respuesta = Integer.valueOf(sc.nextLine());
@@ -61,10 +64,12 @@ public class UIDoctorMenu {
                 System.out.println("La fecha es " + fecha + "?: " 
                         + "\n1. SI \n2. NO");
                 int confirmacionFecha = Integer.valueOf(sc.nextLine());
+                
                 if (confirmacionFecha == 2) continue;
                 
                 int confimacionHora = 0;
                 String hora = "";
+                
                 do {
                     System.out.println("Inserta hora disponible: 23:59 ");
                     hora = sc.nextLine();
@@ -79,14 +84,13 @@ public class UIDoctorMenu {
             } else if (respuesta == 0) {
                 verMenuDoctor();
             }
-        } while (respuesta != 0);
-        
+            
+        } while (respuesta != 0);   
     }
     
     private static void chequeoTurnosDisponibles(Doctor doc) {
         
-        if (doc.getTurnosDisponibles().size() > 0 && !turnosDisponiblesDoctores.contains(doc)) {
-            
+        if (doc.getTurnosDisponibles().size() > 0 && !turnosDisponiblesDoctores.contains(doc)) {    
             turnosDisponiblesDoctores.add(doc);
         }
     }

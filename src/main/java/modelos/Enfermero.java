@@ -1,9 +1,9 @@
 package modelos;
 
-public class Enfermero extends User{
-    
+public class Enfermero extends User {
+
     private String especialidad;
-    
+
     public Enfermero(String nombreCompleto, String mail) {
         super(nombreCompleto, mail);
     }
@@ -21,5 +21,4 @@ public class Enfermero extends User{
         System.out.println("Hosp.: samic");
         System.out.println("Depto.: pediatria");
     }
-       
 }

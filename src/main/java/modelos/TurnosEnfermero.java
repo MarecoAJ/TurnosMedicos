@@ -3,6 +3,7 @@ package modelos;
 import java.util.Date;
 
 public class TurnosEnfermero implements IAgendarTurnos{
+    
     private int id;
     private Enfermero enfermero;
     private Paciente paciente;
@@ -42,8 +43,5 @@ public class TurnosEnfermero implements IAgendarTurnos{
     }
 
     @Override
-    public void agendar(Date fecha, String hora) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    public void agendar(Date fecha, String hora) {} 
 }
